@@ -7,7 +7,7 @@ import { EditComponent } from './components/admin/edit/edit.component';
 const routes: Routes = [
   { path: 'admin', component: AdminComponent, 
     children: [
-    { path: '', redirectTo: 'upload', pathMatch: 'full' },
+    { path: '', redirectTo: '', pathMatch: 'full' },
     { path: 'edit', component: EditComponent },
     { path: 'upload', component: UploadComponent },
 
