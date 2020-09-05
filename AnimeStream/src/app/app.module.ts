@@ -3,15 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomePageComponent } from './home-page/home-page.component';
 import { NbThemeModule, NbLayoutModule, NbCardModule, NbInputModule } from '@nebular/theme';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { AdminComponent } from './components/admin/admin.component';
+import { DatabaseService } from './services/database.service' 
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,7 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     NbCardModule,
     NbInputModule
   ],
-  providers: [],
+  providers: [DatabaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
