@@ -1,1 +1,18 @@
-<p>admin works!</p>
+<nb-layout>
+    <nb-layout-header fixed>
+      <button nbButton status="success" size="tiny" (click)="toggle()">Menu</button>
+    </nb-layout-header>
+  
+    <nb-sidebar tag="left">
+        <nb-menu [items]="items">
+        </nb-menu>
+    </nb-sidebar>
+
+      
+    <nb-layout-column class="colored-column-warning">
+        <router-outlet> </router-outlet>
+    </nb-layout-column>
+  
+</nb-layout>
+
+
