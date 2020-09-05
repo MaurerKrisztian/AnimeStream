@@ -12,7 +12,8 @@ import { UploadComponent } from './components/admin/upload/upload.component';
 import { EditComponent } from './components/admin/edit/edit.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
+import { ApiService } from './services/api.service';
 
 @NgModule({
   declarations: [
@@ -39,9 +40,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NbEvaIconsModule,
     NbIconModule,
     NbActionsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [DatabaseService,   NbSidebarService],
+  providers: [DatabaseService,   NbSidebarService, ApiService],
   bootstrap: [AppComponent] 
 })
 export class AppModule { }
