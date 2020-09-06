@@ -8,18 +8,17 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class EditComponent implements OnInit {
 
+  animes;
+
   constructor(private api: ApiService) {
-    
    }
 
   ngOnInit(): void {
     this.api.getAll().subscribe((data)=>{
       console.log(data)
+      this.animes = data;
     });
 
-    this.api.getById(12).subscribe((data)=>{
-      console.log("Api call working: ", data)
-    });
   }
 
 }

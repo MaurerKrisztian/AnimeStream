@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-upload',
@@ -8,7 +9,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class UploadComponent implements OnInit {
 
-  constructor() { }
+  constructor(private Api: ApiService) { }
   
     animeForm = new FormGroup({
     title: new FormControl(''),
@@ -22,7 +23,15 @@ export class UploadComponent implements OnInit {
   }
 
   submit(){
-   console.log(this.animeForm);
+   console.log("Create anime: ", this.animeForm.value);
+    this.Api.create({
+      title: this.animeForm.value.title,
+      description: this.animeForm.value.description,
+      imageLink: this.animeForm.value.imglink
+    }).subscribe((response)=>{
+      console.log(response)
+    })
+    
   }
 
 }
