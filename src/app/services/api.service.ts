@@ -11,6 +11,7 @@ export class ApiService {
 
   HOST = 'http://localhost:3000';
   BASE_ENDPOINT = '/api/anime/';
+  JIKAN_ENDPOINT = '/api/jikan'
   BASE_URL = this.HOST + this.BASE_ENDPOINT;
 
   constructor(private http: HttpClient) { }
@@ -36,5 +37,9 @@ export class ApiService {
   }
   update(updatedFields){
     return this.http.patch(this.BASE_URL, updatedFields);
+  }
+
+  getJikanAnime(search){
+    return this.http.get(this.HOST + this.JIKAN_ENDPOINT + '?search=' + search);
   }
 }

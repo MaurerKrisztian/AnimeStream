@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NbThemeModule, NbLayoutModule, NbCardModule, NbInputModule,  NbButtonModule, NbTreeGridModule, NbSidebarService,NbRouteTabsetModule, NbSidebarModule, NbMenuItem, NbMenuModule, NbIconModule, NbActionsModule  } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbCardModule, NbInputModule,  NbButtonModule, NbTreeGridModule, NbSidebarService,NbRouteTabsetModule, NbSidebarModule, NbMenuItem, NbMenuModule, NbIconModule, NbActionsModule, NbAutocompleteModule, NbToastrModule  } from '@nebular/theme';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { AdminComponent } from './components/admin/admin.component';
@@ -20,6 +20,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { OtherApiService } from "./services/other-api.service";
+import { config } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -56,9 +58,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatInputModule,
     MatCardModule,
     NbLayoutModule,
-    FlexLayoutModule 
+    FlexLayoutModule,
+    NbAutocompleteModule,
+    NbToastrModule.forRoot(),
   ],
-  providers: [DatabaseService,   NbSidebarService, ApiService],
+  providers: [DatabaseService,   NbSidebarService, ApiService, OtherApiService],
   bootstrap: [AppComponent] 
 })
 export class AppModule { }

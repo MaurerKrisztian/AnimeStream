@@ -1,12 +1,32 @@
+
+
+    <input #autoInput
+    nbInput
+    type="text"
+    (input)="onChange()"
+    placeholder="Search anime"
+    [nbAutocomplete]="auto" />
+
+  <nb-autocomplete #auto (selectedChange)="onSelectionChange($event)">
+
+    <nb-option *ngFor="let option of filteredOptions$ | async" [value]="option">
+      {{ option.str }}
+    </nb-option>
+
+  </nb-autocomplete>
+
+
 <form [formGroup]="animeForm">
 <nb-card>
     <nb-card-body class="example-items-col"> 
-      <input type="text" nbInput fullWidth status="basic" placeholder="Title"  formControlName="title">
+      <input type="text" nbInput fullWidth status="basic" placeholder="Title"  [formControlName]="'title'">
       <textarea nbInput fullWidth placeholder="Full width" formControlName="description"></textarea>
       <input type="text" nbInput fullWidth status="basic" placeholder="ImageLink" formControlName="imglink">
       <input type="text" nbInput fullWidth status="basic" placeholder="Keywords" formControlName="keywords">
       <input type="text" nbInput fullWidth status="basic" placeholder="Category"  formControlName="category">
       <button nbButton status="primary" (click)=submit()>Submit</button>
+      
     </nb-card-body>
   </nb-card>
 </form>
+
