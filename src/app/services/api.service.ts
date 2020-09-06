@@ -32,7 +32,7 @@ export class ApiService {
     return this.http.post(this.BASE_URL, anime);
   }
   delete(id){
-    return this.http.delete(this.BASE_URL, id);
+    return this.http.delete(this.BASE_URL +  id);
   }
   update(updatedFields){
     return this.http.patch(this.BASE_URL, updatedFields);
