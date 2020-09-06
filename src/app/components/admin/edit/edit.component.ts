@@ -13,6 +13,8 @@ import { MatPaginator } from '@angular/material/paginator';
 export class EditComponent  implements OnInit {
   displayedColumns: string[] = ['title', 'description', 'imageLink', 'delete'];
   
+  animes;
+
   constructor(private api: ApiService){
     
   }
@@ -23,6 +25,7 @@ export class EditComponent  implements OnInit {
   renderTable(){
     this.api.getAll().subscribe((data)=>{
       this.ELEMENT_DATA = data;
+      this.animes = data;
       console.log(data)
       this.dataSource = new MatTableDataSource(this.ELEMENT_DATA);
   });

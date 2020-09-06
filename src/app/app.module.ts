@@ -18,6 +18,9 @@ import { MatSliderModule } from '@angular/material/slider';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatInputModule} from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +53,10 @@ import {MatInputModule} from '@angular/material/input';
     MatSliderModule,
     MatTableModule,
     MatPaginatorModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule,
+    NbLayoutModule,
+    FlexLayoutModule 
   ],
   providers: [DatabaseService,   NbSidebarService, ApiService],
   bootstrap: [AppComponent] 
