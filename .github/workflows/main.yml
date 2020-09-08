@@ -18,12 +18,13 @@ jobs:
     - name: Use Node.js 12.8
       uses: actions/setup-node@v1
       with:
-        node-version: 12.8
-    - name: Install dependencies
-      run: npm install
-    - name: install firebase
-      run: npm install -g firebase-tools
-   # - name: Build
-   #   run: npm run build -- --prod
-    - name: deploy to firebase
-      run:  firebase deploy --token ${FIREBASE_TOKEN}
+        node-version: 12.8      
+    - name: Checkout the repository
+      uses: actions/checkout@master
+      
+    - name: Deploy to Firebase
+      uses: w9jds/firebase-action@master
+      with:
+          args: deploy --only hosting
+      env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
