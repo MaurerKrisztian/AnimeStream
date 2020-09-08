@@ -22,6 +22,7 @@ import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { OtherApiService } from "./services/other-api.service";
 import { config } from 'rxjs';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { config } from 'rxjs';
     AdminComponent,
     UploadComponent,
     EditComponent,
+    HomeComponent,
     
   ],
   imports: [

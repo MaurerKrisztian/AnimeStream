@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/AnimeStream",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
