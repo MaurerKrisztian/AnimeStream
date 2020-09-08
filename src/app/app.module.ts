@@ -23,6 +23,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { OtherApiService } from "./services/other-api.service";
 import { config } from 'rxjs';
 import { HomeComponent } from './components/home/home.component';
+import { MainFrameComponent } from './components/main-frame/main-frame.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,7 @@ import { HomeComponent } from './components/home/home.component';
     UploadComponent,
     EditComponent,
     HomeComponent,
+    MainFrameComponent,
     
   ],
   imports: [
@@ -63,6 +67,8 @@ import { HomeComponent } from './components/home/home.component';
     FlexLayoutModule,
     NbAutocompleteModule,
     NbToastrModule.forRoot(),
+    MatSidenavModule,
+    MatIconModule
   ],
   providers: [DatabaseService,   NbSidebarService, ApiService, OtherApiService],
   bootstrap: [AppComponent] 
