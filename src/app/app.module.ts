@@ -26,6 +26,7 @@ import { HomeComponent } from './components/home/home.component';
 import { MainFrameComponent } from './components/main-frame/main-frame.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,10 @@ import {MatIconModule} from '@angular/material/icon';
     NbAutocompleteModule,
     NbToastrModule.forRoot(),
     MatSidenavModule,
-    MatIconModule
+    MatIconModule,
+    MatInputModule,
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [DatabaseService,   NbSidebarService, ApiService, OtherApiService],
   bootstrap: [AppComponent] 

@@ -11,6 +11,5 @@ export class MainFrameComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  showFiller = false;
 
 }
