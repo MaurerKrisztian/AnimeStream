@@ -29,6 +29,6 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Build and Deploy firebase
         run: |
-          npm build --prod,
+          npm npm run-script build,
           firebase deploy --token ${FIREBASE_TOKEN}
     
