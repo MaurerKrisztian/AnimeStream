@@ -27,6 +27,7 @@ import { MainFrameComponent } from './components/main-frame/main-frame.component
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { AnimeDetailsComponent } from './components/anime-details/anime-details.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { MatButtonModule } from '@angular/material/button';
     EditComponent,
     HomeComponent,
     MainFrameComponent,
+    AnimeDetailsComponent,
     
   ],
   imports: [
