@@ -28,6 +28,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { AnimeDetailsComponent } from './components/anime-details/anime-details.component';
+import {MatToolbarModule  } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { AnimeDetailsComponent } from './components/anime-details/anime-details.
     MatIconModule,
     MatInputModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatToolbarModule
   ],
   providers: [DatabaseService,   NbSidebarService, ApiService, OtherApiService],
   bootstrap: [AppComponent] 
