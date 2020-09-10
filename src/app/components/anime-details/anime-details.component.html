@@ -1,20 +1,22 @@
-
 <div class="header">
-    <h1> {{anime?.title}} </h1>
+  <h1>{{ anime?.title }}</h1>
 </div>
 
 <div class="body">
-    <img [src]="anime?.imageLink">
-    <h3> {{anime?.description }}</h3>
-    <p>more details....</p>
-    <p>anime epizodes / other movie stb ...</p>
-
+  <div class="body-container">
+    <div class="img-container">
+      <img [src]="anime?.imageLink" />
+    </div>
+    <div class="description-cont">
+      <h3>{{ anime?.description }}</h3>
+      <p>more details....</p>
+      <p>anime epizodes / other movie stb ...</p>
+    </div>
+    <div class="links">Sajtoslink</div>
+  </div>
 </div>
 
-
-<div class="footer">
-
-</div>
+<div class="footer"></div>
 
 <!--
 cim (angol japan),

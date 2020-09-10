@@ -1,25 +1,25 @@
 <mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <a href="/home"><button mat-raised-button class="menu">Home</button></a
+    ><br />
+    <a href="/admin"><button mat-raised-button class="menu">Admin</button></a>
+    <br />
+  </mat-drawer>
+  <div class="header-right">
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Example home icon"
+      (click)="drawer.toggle()"
+      >menu</mat-icon
+    >
 
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Anime</mat-label>
+        <input matInput placeholder="Search an anime" />
+      </mat-form-field>
+    </form>
 
-      <a href="/home"><button mat-raised-button class="menu" >Home</button></a><br>
-      <a href="/admin"><button mat-raised-button class="menu" >Admin</button></a> <br>
-    </mat-drawer>
-    <div class="header-right">
-        <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="drawer.toggle()">menu</mat-icon>
-
-        <form class="example-form">
-            <mat-form-field class="example-full-width">
-              <mat-label>Anime</mat-label>
-              <input matInput placeholder="Search an anime">
-            </mat-form-field>
-          </form>
-
-    <div class="example-sidenav-content">
-        
-
-        <router-outlet> </router-outlet>
-    </div>
-</div>
-  
-  </mat-drawer-container>
+    <router-outlet> </router-outlet>
+  </div>
+</mat-drawer-container>

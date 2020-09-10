@@ -1,0 +1,12 @@
+.body-container {
+  display: grid;
+  grid-template-areas:
+    "img-container description-cont"
+    "links links";
+  grid-gap: 1rem;
+  height: 73vh;
+}
+
+.links {
+  text-align: center;
+}
