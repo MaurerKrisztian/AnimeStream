@@ -11,16 +11,23 @@ import { ApiService } from 'src/app/services/api.service';
 export class AnimeDetailsComponent implements OnInit {
  
   private routeSub: Subscription;
-  id;
+  id : string;
   anime;
 
   constructor(private route: ActivatedRoute,private api: ApiService) { }
+
+  getAnimeEpisodes(id){
+    this.api.get('/api/episode/anime/' + id).subscribe((episodes)=>{
+      console.log(episodes)
+    });
+  }
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe(params => {
       this.id = params['id']
     });
 
+    this.getAnimeEpisodes(this.id);
     this.getAnimeById(this.id);
   }
 

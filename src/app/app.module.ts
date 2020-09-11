@@ -29,6 +29,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { AnimeDetailsComponent } from './components/anime-details/anime-details.component';
 import {MatToolbarModule  } from '@angular/material/toolbar';
+import { AnimeCardComponent } from './components/anime-card/anime-card.component';
+import { AddEpisodeComponent } from './components/add-episode/add-episode.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import {MatToolbarModule  } from '@angular/material/toolbar';
     HomeComponent,
     MainFrameComponent,
     AnimeDetailsComponent,
+    AnimeCardComponent,
+    AddEpisodeComponent
     
   ],
   imports: [

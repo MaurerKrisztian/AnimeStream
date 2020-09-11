@@ -1,10 +1,11 @@
 import { Component, OnInit, ViewChild, HostBinding } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import {  FormControl } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
 import { ChangeDetectionStrategy } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { NbToastrService, NbComponentStatus } from '@nebular/theme';
+import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-upload',
@@ -13,7 +14,8 @@ import { NbToastrService, NbComponentStatus } from '@nebular/theme';
 })
 export class UploadComponent implements OnInit {
 
-  constructor(private Api: ApiService, private toastrService: NbToastrService) { }
+  form: FormGroup;
+  constructor(private Api: ApiService, private toastrService: NbToastrService, private fb: FormBuilder) { }
   
     animeForm = new FormGroup({
     title: new FormControl(''),
@@ -28,7 +30,38 @@ export class UploadComponent implements OnInit {
     //autocomplete
     this.options = [];
     this.filteredOptions$ = of(this.options);
+
+    this.form = this.fb.group({
+      items: this.fb.array([this.createItem()])
+    })
   }
+
+  
+  createItem() {
+    return this.fb.group({
+      link: [''],
+      quality: [''],
+      storageName:  ['']
+    })
+  }
+
+  addNext() {
+    (this.form.get('items') as FormArray).push(this.createItem())
+  }
+
+  getControls() {
+    return (this.form.get('items') as FormArray).controls;
+  }
+
+  submit2() {
+    console.log(this.form.value, this.animeForm.value);
+  }
+
+  public removeRow(index: number): void {
+    const link = this.form.get('items') as FormArray;
+    link.removeAt(index);
+  }
+  
 
   searchAnime(search){
     this.options = [];

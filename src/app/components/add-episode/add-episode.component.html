@@ -1,0 +1,50 @@
+<mat-card>
+    <mat-card-header><div class="header"><h2>Add a new episode</h2></div></mat-card-header>
+<mat-card-content>
+   
+    
+    <mat-form-field class="example-full-width">
+        <mat-label>season</mat-label>
+        <input matInput  placeholder="season">
+      </mat-form-field>
+
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>part</mat-label>
+        <input matInput  placeholder="part">
+      </mat-form-field>
+
+<mat-card-header><h2> LINKS: </h2> </mat-card-header>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div formArrayName="items"
+    *ngFor="let item of form.get('items')['controls'] ; let i = index">
+    <div [formGroupName]="i">
+     
+    
+
+      <mat-form-field class="example-full-width">
+        <mat-label>link</mat-label>
+        <input matInput formControlName='link' placeholder="link">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>quality</mat-label>
+        <input matInput formControlName='quality' placeholder="quality">
+      </mat-form-field>
+   
+
+      <mat-form-field class="example-full-width">
+        <mat-label>storage name</mat-label>
+        <input matInput formControlName='storageName' placeholder="storageName">
+      </mat-form-field>
+      <button (click)="removeRow(i)" mat-raised-button color="warn" >remove</button>
+    </div>
+  </div>
+  <button mat-raised-button color="accent" type="button" (click)="addNext()">Add Link</button>
+</form>
+</mat-card-content>
+<button mat-raised-button color="primary" (click)=submit()>Submit</button>
+
+</mat-card>
+

@@ -16,17 +16,20 @@
   </nb-autocomplete>
 
 
-<form [formGroup]="animeForm">
+
 <nb-card>
     <nb-card-body class="example-items-col"> 
+      <form [formGroup]="animeForm">
       <input type="text" nbInput fullWidth status="basic" placeholder="Title"  [formControlName]="'title'">
       <textarea nbInput fullWidth placeholder="Description" formControlName="description"></textarea>
       <input type="text" nbInput fullWidth status="basic" placeholder="ImageLink" formControlName="imglink">
       <input type="text" nbInput fullWidth status="basic" placeholder="Keywords" formControlName="keywords">
       <input type="text" nbInput fullWidth status="basic" placeholder="Category"  formControlName="category">
-      <button nbButton status="primary" (click)=submit()>Submit</button>
-      
-    </nb-card-body>
-  </nb-card>
-</form>
+    </form>     
+</nb-card-body>
+<button nbButton status="primary" (click)=submit2()>Submit</button>
 
+
+</nb-card>
+aaaa
+<app-add-episode></app-add-episode>

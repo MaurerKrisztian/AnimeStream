@@ -24,6 +24,7 @@
     "@angular/router": "~10.0.14",
     "@nebular/eva-icons": "^6.0.1",
     "@nebular/theme": "^6.0.1",
+    "compass-mixins": "^0.12.10",
     "eva-icons": "^1.1.2",
     "express": "^4.17.1",
     "mongoose": "^5.10.3",
