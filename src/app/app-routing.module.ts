@@ -12,12 +12,12 @@ import { LinksComponent } from './components/links/links.component';
 
 const routes: Routes = [
   { path: 'card', component: AnimeCardComponent },
-  { path: 'links/:animeId', component: LinksComponent },
   { path: '', component: MainFrameComponent, 
     children: [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'anime/:id', component: AnimeDetailsComponent },
+    { path: 'links/:animeId', component: LinksComponent },
   ]
 },
 

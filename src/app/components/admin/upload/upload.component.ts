@@ -53,9 +53,6 @@ export class UploadComponent implements OnInit {
     return (this.form.get('items') as FormArray).controls;
   }
 
-  submit2() {
-    console.log(this.form.value, this.animeForm.value);
-  }
 
   public removeRow(index: number): void {
     const link = this.form.get('items') as FormArray;

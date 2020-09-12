@@ -2,3 +2,8 @@
 
     padding: 20px;
 }
+
+.card {
+    width: 95%;
+    margin-bottom: 15px;
+}

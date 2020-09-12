@@ -1,1 +1,32 @@
-<p>links works!</p>
+<p>links</p>
+<div class="container">
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="link">
+      <th mat-header-cell *matHeaderCellDef> Link </th>
+      <td mat-cell *matCellDef="let element"> <a mat-raised-button [href]="element.link" target="_blank">WATCH</a> </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="quality">
+      <th mat-header-cell *matHeaderCellDef> quality </th>
+      <td mat-cell *matCellDef="let element"> {{element.quality}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="storageName">
+      <th mat-header-cell *matHeaderCellDef> Storage name </th>
+      <td mat-cell *matCellDef="let element"> {{element.storageName}} </td>
+    </ng-container>
+  
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+
+</div>
