@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-frame',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainFrameComponent implements OnInit {
 
-  constructor() { }
+  searchStr;
+
+  constructor(private api: ApiService, private router: Router) {
+    
+  } 
 
   ngOnInit(): void {
+    
+  }
+
+  findAnime(){
+    console.log(this.searchStr)
+    this.router.navigate(['/home'], { queryParams: { term: this.searchStr }})
   }
 
 }

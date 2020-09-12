@@ -12,7 +12,7 @@
     </div>
     <div class="links">
       <span class="episodes" *ngFor="let episode of episodes">
-        <a [href]="'/links/' + id + '?s=' + episode.season + '&p=' + episode.part">{{episode.season}} e {{episode.part}} p
+        <a [href]="'/links/' + id + '?s=' + episode.season + '&p=' + episode.part">{{episode.season}} s {{episode.part}} p
          </a>
          <!-- <div *ngFor="let link of episode?.links">
             {{link.link}} / {{link.quality}} / {{link.storageName}} <br>
