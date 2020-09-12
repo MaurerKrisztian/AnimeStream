@@ -1,0 +1,21 @@
+<p>login works!</p>
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+
+    <div>
+      <label for="email">
+        Name
+      </label>
+      <input matInput id="email" type="text" formControlName="email">
+    </div>
+  
+    <div>
+      <label for="password">
+        Address
+      </label>
+      <input matInput id="password" type="password" formControlName="password">
+    </div>
+  
+    <button mat-raised-button color="promary" class="button" type="submit">Login</button>
+  
+  </form>

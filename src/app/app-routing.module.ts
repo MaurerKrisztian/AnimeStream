@@ -8,10 +8,14 @@ import { MainFrameComponent } from './components/main-frame/main-frame.component
 import { AnimeDetailsComponent } from './components/anime-details/anime-details.component';
 import { AnimeCardComponent } from './components/anime-card/anime-card.component';
 import { LinksComponent } from './components/links/links.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegistrationComponent } from './components/registration/registration.component';
 
 
 const routes: Routes = [
   { path: 'card', component: AnimeCardComponent },
+  {path: 'login', component: LoginComponent},
+  {path: 'registration', component: RegistrationComponent},
   { path: '', component: MainFrameComponent, 
     children: [
     { path: '', redirectTo: 'home', pathMatch: 'full' },

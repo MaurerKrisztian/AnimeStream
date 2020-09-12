@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute, Router } from '@angular/router';
+import { NbDialogService } from '@nebular/theme';
 import { Subscription } from 'rxjs';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -14,7 +16,9 @@ export class AnimeDetailsComponent implements OnInit {
   id : string;
   anime;
 
-  constructor(private route: ActivatedRoute,private api: ApiService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private api: ApiService) { }
+
+
 
   episodes: any;
   getAnimeEpisodes(id){
@@ -38,6 +42,14 @@ export class AnimeDetailsComponent implements OnInit {
       this.anime = anime[0];
       console.log(this.anime)
   });
+  }
+
+  // TODO: delete the links
+  deleteAnime(id) {
+    this.api.del('/api/anime/'+id).subscribe((response)=>{
+      console.log("anime deleted.")
+      this.router.navigate(['/home'])
+    });
   }
 
 

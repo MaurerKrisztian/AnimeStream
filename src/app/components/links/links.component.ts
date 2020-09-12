@@ -61,6 +61,6 @@ export class LinksComponent implements OnInit {
   }
 
 
-  displayedColumns: string[] = ['storageName', 'quality', 'link'];
+  displayedColumns: string[] = ['storageName', 'quality', 'link', 'delete'];
   dataSource;//this.episodes.links;
 }
