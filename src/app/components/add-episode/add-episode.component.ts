@@ -14,6 +14,9 @@ export class AddEpisodeComponent implements OnInit {
   @Input()
   private animeId : string;
 
+  seasonInp;
+  partInp;
+
   form: FormGroup;
   constructor(private Api: ApiService, private toastrService: NbToastrService, private fb: FormBuilder) { }
 
@@ -45,9 +48,9 @@ export class AddEpisodeComponent implements OnInit {
 
     let data =     {
       animeId: this.animeId,
-      title: "episode 1",
-      season: "1",
-      part: "1",
+      title: "test title",
+      season: this.seasonInp,
+      part: this.partInp,
       links: this.form.value.items
    }
 

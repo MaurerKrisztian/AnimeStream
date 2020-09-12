@@ -16,9 +16,11 @@ export class AnimeDetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,private api: ApiService) { }
 
+  episodes: any;
   getAnimeEpisodes(id){
     this.api.get('/api/episode/anime/' + id).subscribe((episodes)=>{
       console.log(episodes)
+      this.episodes = episodes;
     });
   }
 

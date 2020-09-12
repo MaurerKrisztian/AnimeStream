@@ -9,10 +9,15 @@
     </div>
     <div class="description-cont">
       <h3>{{ anime?.description }}</h3>
-      <p>more details....</p>
-      <p>anime epizodes / other movie stb ...</p>
     </div>
-    <div class="links">Sajtoslink</div>
+    <div class="links">
+      <div *ngFor="let episode of episodes">
+         {{episode.season}} e {{episode.part}} p
+          <div *ngFor="let link of episode?.links">
+            {{link.link}} / {{link.quality}} / {{link.storageName}} <br>
+          </div>
+      </div>
+    </div>
   </div>
 </div>
 

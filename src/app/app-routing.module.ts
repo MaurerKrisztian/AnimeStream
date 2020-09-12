@@ -7,10 +7,12 @@ import { HomeComponent } from './components/home/home.component';
 import { MainFrameComponent } from './components/main-frame/main-frame.component';
 import { AnimeDetailsComponent } from './components/anime-details/anime-details.component';
 import { AnimeCardComponent } from './components/anime-card/anime-card.component';
+import { LinksComponent } from './components/links/links.component';
 
 
 const routes: Routes = [
   { path: 'card', component: AnimeCardComponent },
+  { path: 'links/:animeId', component: LinksComponent },
   { path: '', component: MainFrameComponent, 
     children: [
     { path: '', redirectTo: 'home', pathMatch: 'full' },

@@ -9,7 +9,7 @@ export class ApiService {
 
   
 
-  HOST = "https://anime-stream-api.herokuapp.com" //'http://localhost:3000';
+  HOST ='http://localhost:3000'; //"https://anime-stream-api.herokuapp.com" //'http://localhost:3000';
   BASE_ENDPOINT = '/api/anime/';
   JIKAN_ENDPOINT = '/api/jikan';
   BASE_URL = this.HOST + this.BASE_ENDPOINT;
