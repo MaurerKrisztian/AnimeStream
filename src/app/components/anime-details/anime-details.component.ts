@@ -11,6 +11,8 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./anime-details.component.css']
 })
 export class AnimeDetailsComponent implements OnInit {
+
+  userRoles=localStorage.getItem('roles');
  
   private routeSub: Subscription;
   id : string;

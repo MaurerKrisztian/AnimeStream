@@ -25,6 +25,7 @@
 
 <div class="footer"></div>
 
+<div *ngIf="userRoles != undefined">
 <hr>
 
 <button mat-button mat-raised-button (click)="deleteAnime(id)" color="warn">Delete this anime</button>
@@ -32,11 +33,4 @@
 
 <app-add-episode [animeId]="id"></app-add-episode>
 
-<!--
-cim (angol japan),
-leiras,
-kep,
-kategoria,
-epizodok szama, evadok szam,
-
-Linkek -->
+</div>

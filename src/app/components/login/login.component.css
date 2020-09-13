@@ -1,0 +1,17 @@
+
+.main-div{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.loginForm{
+    width: 400px;
+}
+
+.err {
+    color: red;
+    font-size: medium;
+}
