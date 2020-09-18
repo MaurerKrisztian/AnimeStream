@@ -35,7 +35,9 @@ import { LinksComponent } from './components/links/links.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
-import { TokenInterceptorService } from './services/token-interceptor.service'
+import { TokenInterceptorService } from './services/token-interceptor.service';
+import { UsersComponent } from './components/admin/users/users.component';
+import { ProfileComponent } from './components/profile/profile.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +51,9 @@ import { TokenInterceptorService } from './services/token-interceptor.service'
     AddEpisodeComponent,
     LinksComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    UsersComponent,
+    ProfileComponent
     
   ],
   imports: [

@@ -27,6 +27,11 @@ export class AdminComponent implements OnInit {
       title: 'Upload',
       link: '/admin/upload',
       icon: 'upload-outline'
+    },
+    {
+      title: 'Users',
+      link: '/admin/users',
+      icon: 'people-outline'
     }
    ];
 

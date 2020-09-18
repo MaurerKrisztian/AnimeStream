@@ -59,11 +59,7 @@ export class LoginComponent implements OnInit {
       );
   }
 
-  logout(){
-      localStorage.removeItem('accessToken')
-      localStorage.removeItem('userId')
-      localStorage.removeItem('roles')
-  }
+
 
 
 

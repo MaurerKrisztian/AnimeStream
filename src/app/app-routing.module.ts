@@ -10,6 +10,8 @@ import { AnimeCardComponent } from './components/anime-card/anime-card.component
 import { LinksComponent } from './components/links/links.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { UsersComponent } from './components/admin/users/users.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 const routes: Routes = [
@@ -22,6 +24,7 @@ const routes: Routes = [
     { path: 'links/:animeId', component: LinksComponent },
     {path: 'login', component: LoginComponent},
     {path: 'registration', component: RegistrationComponent},
+    {path: 'profile/:userId', component: ProfileComponent},
   ]
 },
 
@@ -30,6 +33,7 @@ const routes: Routes = [
     { path: '', redirectTo: '', pathMatch: 'full' },
     { path: 'edit', component: EditComponent },
     { path: 'upload', component: UploadComponent },
+    { path: 'users', component: UsersComponent }
   ]
 }
 ];

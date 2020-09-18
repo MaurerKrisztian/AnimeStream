@@ -1,10 +1,16 @@
 <mat-drawer-container class="example-container" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side">
-
+      <ng-container *ngIf="!auth.isAuth(); else logoutBlock">
+        <a href="/login"><button mat-raised-button class="menu" >Login</button></a> <br>
+      </ng-container>
+      <ng-template #logoutBlock>
+        <a [href]="'/profile/' + auth.getUserId()"><button mat-raised-button class="menu">My Profile</button></a><br>
+        <button mat-raised-button class="menu" (click)="auth.logout()">logout</button><br>
+      </ng-template>
+      
 
       <a href="/home"><button mat-raised-button class="menu" >Home</button></a><br>
       <a href="/admin"><button mat-raised-button class="menu" >Admin</button></a> <br>
-      <a href="/login"><button mat-raised-button class="menu" >Login</button></a> <br>
       <a href="/registration"><button mat-raised-button class="menu" >Registration</button></a> <br>
     </mat-drawer>
     <div class="header-right">
