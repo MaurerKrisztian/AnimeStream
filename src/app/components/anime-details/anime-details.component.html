@@ -1,7 +1,12 @@
 
 <div class="header">
-  <h1>{{ anime?.title }}</h1>
+  <h1>{{ anime?.title }} 
+    <button *ngIf="authService.isAuth()"  class="like"  (click)="like(id)">
+      {{ (isLiked)? "unlike": "like" }}
+  </button></h1>
 </div>
+
+
 
 <div class="body">
   <div class="body-container">
@@ -25,9 +30,8 @@
 
 <div class="footer"></div>
 
-<div *ngIf="userRoles != undefined">
+<div *ngIf="authService.isAuth()">
 <hr>
-
 <button mat-button mat-raised-button (click)="deleteAnime(id)" color="warn">Delete this anime</button>
 <hr>
 

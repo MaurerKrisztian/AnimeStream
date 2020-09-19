@@ -9,7 +9,7 @@ export class ApiService {
 
   
 
-  HOST =  "https://anime-stream-api.herokuapp.com" //'http://localhost:3000';
+  HOST ="https://anime-stream-api.herokuapp.com" //'http://localhost:3000';
   BASE_ENDPOINT = '/api/anime/';
   JIKAN_ENDPOINT = '/api/jikan';
   BASE_URL = this.HOST + this.BASE_ENDPOINT;
@@ -39,6 +39,7 @@ export class ApiService {
     return this.http.patch(this.BASE_URL, updatedFields);
   }
 
+
   getJikanAnime(search){
     return this.http.get(this.HOST + this.JIKAN_ENDPOINT + '?search=' + search);
   }
@@ -60,6 +61,10 @@ export class ApiService {
 
   del(endpoint){
     return this.http.delete(this.HOST + endpoint);
+  }
+
+  patch(endpoint, body){
+    return this.http.patch(this.HOST + endpoint, body);
   }
 
 }

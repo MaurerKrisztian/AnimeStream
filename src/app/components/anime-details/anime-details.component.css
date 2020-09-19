@@ -28,3 +28,20 @@ a:hover, a:active {
 .episodes{
   margin: 10px;
 }
+
+
+.like {
+  
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    margin-right: 5%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    float: right;
+  }
+
+

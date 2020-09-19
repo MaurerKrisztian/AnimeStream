@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NbDialogService } from '@nebular/theme';
 import { Subscription } from 'rxjs';
 import { ApiService } from 'src/app/services/api.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-anime-details',
@@ -18,7 +19,7 @@ export class AnimeDetailsComponent implements OnInit {
   id : string;
   anime;
 
-  constructor(private route: ActivatedRoute, private router: Router, private api: ApiService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private api: ApiService, public authService: AuthService) { }
 
 
 
@@ -30,6 +31,8 @@ export class AnimeDetailsComponent implements OnInit {
     });
   }
 
+  isLiked = false;
+
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe(params => {
       this.id = params['id']
@@ -37,13 +40,32 @@ export class AnimeDetailsComponent implements OnInit {
 
     this.getAnimeEpisodes(this.id);
     this.getAnimeById(this.id);
+
+  }
+
+  refreshLike(){
+    console.log(this.authService.getUserId(), this.anime.likers)
+    if(this.anime.likers.includes(this.authService.getUserId())){
+      this.isLiked = true
+    }else {
+      this.isLiked = false;
+    }
   }
 
   getAnimeById(id: string){
     this.api.getById(this.id).subscribe((anime)=>{
       this.anime = anime[0];
       console.log(this.anime)
+
+      this.refreshLike();
   });
+  }
+
+  like(id){
+    this.api.patch('/api/anime/' + id + '/like', {like: !this.isLiked}).subscribe((res)=>{
+      console.log(res)
+      this.getAnimeById(id)
+    })
   }
 
   // TODO: delete the links
