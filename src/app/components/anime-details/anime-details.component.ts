@@ -31,7 +31,7 @@ export class AnimeDetailsComponent implements OnInit {
     });
   }
 
-  isLiked = false;
+  isSubscribe = false;
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe(params => {
@@ -43,12 +43,12 @@ export class AnimeDetailsComponent implements OnInit {
 
   }
 
-  refreshLike(){
-    console.log(this.authService.getUserId(), this.anime.likers)
-    if(this.anime.likers.includes(this.authService.getUserId())){
-      this.isLiked = true
+  refreshSubscribe(){
+    console.log(this.authService.getUserId(), this.anime.subscribers)
+    if(this.anime.subscribers.includes(this.authService.getUserId())){
+      this.isSubscribe = true
     }else {
-      this.isLiked = false;
+      this.isSubscribe = false;
     }
   }
 
@@ -57,12 +57,12 @@ export class AnimeDetailsComponent implements OnInit {
       this.anime = anime[0];
       console.log(this.anime)
 
-      this.refreshLike();
+      this.refreshSubscribe();
   });
   }
 
-  like(id){
-    this.api.patch('/api/anime/' + id + '/like', {like: !this.isLiked}).subscribe((res)=>{
+  subscribe(id){
+    this.api.patch('/api/anime/' + id + '/subscribe', {subscribe: !this.isSubscribe}).subscribe((res)=>{
       console.log(res)
       this.getAnimeById(id)
     })

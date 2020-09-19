@@ -3,3 +3,7 @@ id: {{user._id}} <br>
 name: {{user.name}} <br>
 email: {{user.email}} <br>
 roles: {{user.roles}} <br>
+
+<div class="notification" *ngFor="let notif of user.notification">
+    <span [innerHtml]="notif.message"></span> 
+</div>
