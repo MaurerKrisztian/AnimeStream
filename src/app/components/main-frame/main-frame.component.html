@@ -1,35 +1,108 @@
 <mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-      <ng-container *ngIf="!auth.isAuth(); else logoutBlock">
-        <a href="/login"><button mat-raised-button class="menu" >Login</button></a> <br>
-      </ng-container>
-      <ng-template #logoutBlock>
-        <a [href]="'/profile/' + auth.getUserId()"><button mat-raised-button class="menu">My Profile</button></a><br>
-        <button mat-raised-button class="menu" (click)="auth.logout()">logout</button><br>
-      </ng-template>
-      
+  <mat-toolbar class="navbar">
+    <a href="/home">Anime</a>
+    <mat-form-field class="example-full-width">
+      <mat-label>Anime</mat-label>
+      <input
+        matInput
+        [(ngModel)]="searchStr"
+        (keyup.enter)="findAnime()"
+        placeholder="Search an anime"
+      />
+    </mat-form-field>
 
-      <a href="/home"><button mat-raised-button class="menu" >Home</button></a><br>
-      <a href="/admin"><button mat-raised-button class="menu" >Admin</button></a> <br>
-      <a href="/registration"><button mat-raised-button class="menu" >Registration</button></a> <br>
-    </mat-drawer>
-    <div class="header-right">
-        <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="drawer.toggle()">menu</mat-icon>
+    <button mat-button (click)="findAnime()">Search</button>
+    <div class="menu">
+      <ul>
+        <li>
+          <a href="/home"
+            ><button mat-raised-button class="menu menu-btn">Home</button></a
+          >
+        </li>
+        <li>
+          <ng-container *ngIf="!auth.isAuth(); else logoutBlock">
+            <a href="/login"
+              ><button mat-raised-button class="menu menu-btn">Login</button></a
+            >
+          </ng-container>
 
+          <ng-template #logoutBlock>
+            <ul>
+              <li>
+                <a [href]="'/profile/' + auth.getUserId()"
+                  ><button mat-raised-button class="menu menu-btn">
+                    My Profile
+                  </button></a
+                >
+              </li>
+              <li>
+                <button
+                  mat-raised-button
+                  class="menu menu-btn"
+                  (click)="auth.logout()"
+                >
+                  logout
+                </button>
+              </li>
+            </ul>
+          </ng-template>
+        </li>
 
-        <mat-form-field class="example-full-width">
-        
-          <mat-label>Anime</mat-label>
-          <input matInput [(ngModel)]="searchStr" (keyup.enter)="findAnime()" placeholder="Search an anime">
-         </mat-form-field>
-        
-          <button mat-button  (click)="findAnime()">Search</button>
-        
+        <li>
+          <a href="/admin"
+            ><button mat-raised-button class="menu menu-btn">Admin</button></a
+          >
+        </li>
+        <li>
+          <a href="/registration"
+            ><button mat-raised-button class="menu menu-btn">
+              Registration
+            </button></a
+          >
+        </li>
+      </ul>
+    </div>
+  </mat-toolbar>
+  <!--
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+
+    <ng-container *ngIf="!auth.isAuth(); else logoutBlock">
+      <a href="/login"><button mat-raised-button class="menu">Login</button></a>
+      <br />
+    </ng-container>
+    <ng-template #logoutBlock>
+      <a [href]="'/profile/' + auth.getUserId()"
+        ><button mat-raised-button class="menu">My Profile</button></a
+      ><br />
+      <button mat-raised-button class="menu" (click)="auth.logout()">
+        logout</button
+      ><br />
+    </ng-template>
+
+    <a href="/home"><button mat-raised-button class="menu">Home</button></a
+    ><br />
+    <a href="/admin"><button mat-raised-button class="menu">Admin</button></a>
+    <br />
+    <a href="/registration"
+      ><button mat-raised-button class="menu">Registration</button></a
+    >
+    <br />
+
+  </mat-drawer>
+ -->
+
+  <div class="header-right">
+    <!--
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Example home icon"
+      (click)="drawer.toggle()"
+      >menu</mat-icon
+    >
+-->
 
     <div class="example-sidenav-content">
-
-        <router-outlet> </router-outlet>
+      <router-outlet> </router-outlet>
     </div>
-</div>
-  
-  </mat-drawer-container>
+  </div>
+</mat-drawer-container>
