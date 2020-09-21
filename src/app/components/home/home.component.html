@@ -2,15 +2,19 @@
   <mat-card class="example-card" fxFlex="25%" *ngFor="let anime of animes">
     <mat-card-header>
       <a [href]="'anime/' + anime._id">
-        <mat-card-title>{{ anime.title }}</mat-card-title>
-      </a>({{anime.viewCount}})
+        <mat-card-title>{{ anime.title }}</mat-card-title> </a
+      >({{ anime.viewCount }})
       <mat-card-subtitle>Category</mat-card-subtitle>
     </mat-card-header>
     <div class="chardImage">
-      <img mat-card-image [src]="
+      <img
+        mat-card-image
+        [src]="
           anime.imageLink ||
           'https://static.zerochan.net/Fredrika.%28Hitsugi.no.Chaika%29.full.1850904.jpg'
-        " alt="Photo of a Shiba Inu" />
+        "
+        alt="Photo of a Shiba Inu"
+      />
     </div>
     <mat-card-content>
       <p>
@@ -24,4 +28,64 @@
      -->
     </mat-card-actions>
   </mat-card>
+</div>
+
+<!-- TESZT  -->
+<div class="egybe">
+  <div class="container" *ngFor="let anime of animes">
+    <div class="cellphone-container">
+      <div class="movie">
+        <div class="menu"><i class="material-icons"></i></div>
+        <div class="movie-img">
+          <img
+            mat-card-image
+            [src]="
+              anime.imageLink ||
+              'https://static.zerochan.net/Fredrika.%28Hitsugi.no.Chaika%29.full.1850904.jpg'
+            "
+            alt="Photo of a Shiba Inu"
+          />
+        </div>
+        <div class="text-movie-cont">
+          <div class="mr-grid">
+            <div class="col1">
+              <h2>{{ anime.title }}</h2>
+              <ul class="movie-gen">
+                <li>Adventure, Drama, Sci-Fi,</li>
+              </ul>
+            </div>
+          </div>
+          <div class="mr-grid summary-row">
+            <div class="col2">
+              <h5>SUMMARY</h5>
+            </div>
+            <div class="col2">
+              <ul class="movie-likes">
+                <li>
+                  <i class="material-icons">&#xE813;</i>({{ anime.viewCount }})
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="mr-grid">
+            <div class="col1">
+              <p class="movie-description">
+                {{ anime.description }}
+              </p>
+            </div>
+          </div>
+          <div class="mr-grid actors-row"></div>
+          <div class="mr-grid action-row">
+            <div class="col2">
+              <a [href]="'anime/' + anime._id">
+                <div class="watch-btn">
+                  <h3><i class="material-icons">&#xE037;</i> WATCH</h3>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
