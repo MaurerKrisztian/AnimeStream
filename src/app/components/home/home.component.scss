@@ -2,6 +2,19 @@ $accent-color: #e7e7e7;
 $brand-color: #fe4141;
 $dark-color: #1e1b26;
 
+/* Grow */
+@mixin grow {
+  @include hacks();
+  @include prefixed(transition-duration, $mediumDuration);
+  @include prefixed(transition-property, transform);
+
+  &:hover,
+  &:focus,
+  &:active {
+    @include prefixed(transform, scale(1.1));
+  }
+}
+
 .col2 {
   a:hover {
     text-decoration: none;
@@ -22,6 +35,7 @@ $dark-color: #1e1b26;
   grid-template-areas: "container container container";
   padding-left: 70px;
   padding-right: 130px;
+  margin-top: 50px;
 }
 .cellphone-container {
   width: 375px;

@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
   }
 
   getAnimes(term, pageIndex, pageSize) {
-    this.api.get('/api/anime?term=' + term + '&page='+pageIndex+'&limit='+ pageSize).subscribe((data: any) => {
+    this.api.get('/api/anime?term=' + term + '&page='+(pageIndex+1)+'&limit='+ pageSize).subscribe((data: any) => {
       this.animes = data.data;
       this.length = data.meta.collectionSize
       console.log(data);

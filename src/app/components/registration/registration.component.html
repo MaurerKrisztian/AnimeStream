@@ -1,27 +1,24 @@
 <p>registration works!</p>
-<form [formGroup]="registrationForm" (ngSubmit)="onSubmit(registrationForm.value)">
+<form
+  [formGroup]="registrationForm"
+  (ngSubmit)="onSubmit(registrationForm.value)"
+>
+  <div>
+    <label for="email"> Email </label>
+    <input nbInput id="email" type="text" formControlName="email" />
+  </div>
 
-    <div>
-      <label for="email">
-        Email
-      </label>
-      <input nbInput id="email" type="text" formControlName="email">
-    </div>
-      
-    <div>
-        <label for="name">
-          Name
-        </label>
-        <input nbInput id="name" type="text" formControlName="name">
-      </div>
-  
-    <div>
-      <label for="password">
-        password
-      </label>
-      <input nbInput id="password" type="password" formControlName="password">
-    </div>
-  
-    <button mat-raised-button color="primary" class="button" type="submit">Login</button>
-  
-  </form>
+  <div>
+    <label for="name"> Name </label>
+    <input nbInput id="name" type="text" formControlName="name" />
+  </div>
+
+  <div>
+    <label for="password"> password </label>
+    <input nbInput id="password" type="password" formControlName="password" />
+  </div>
+
+  <button mat-raised-button color="primary" class="button" type="submit">
+    Login
+  </button>
+</form>
