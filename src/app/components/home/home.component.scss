@@ -29,14 +29,14 @@ $dark-color: #1e1b26;
 
 .container {
   margin-bottom: 50px;
+  padding: 20px;
 }
-.egybe {
-  display: grid;
-  grid-template-areas: "container container container";
-  padding-left: 70px;
-  padding-right: 130px;
-  margin-top: 50px;
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
 }
+
 .cellphone-container {
   width: 375px;
   height: 650px;
