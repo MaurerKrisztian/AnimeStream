@@ -9,6 +9,9 @@
 
 .links {
   text-align: center;
+  grid-column-start: 1; 
+  grid-column-end: 3;
+   
 }
 
 
@@ -19,6 +22,7 @@ a:link, a:visited {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  margin: 10px;
 }
 
 a:hover, a:active {
