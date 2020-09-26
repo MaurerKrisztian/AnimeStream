@@ -1,3 +1,18 @@
-.regi {
-  margin-top: 50px;
+
+
+.main-div{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.registrationForm{
+    width: 400px;
+}
+
+.err {
+    color: red;
+    font-size: medium;
 }

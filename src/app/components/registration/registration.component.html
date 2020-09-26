@@ -1,24 +1,50 @@
-<p>registration works!</p>
-<form
-  [formGroup]="registrationForm"
-  (ngSubmit)="onSubmit(registrationForm.value)"
->
-  <div>
-    <label for="email"> Email </label>
-    <input nbInput id="email" type="text" formControlName="email" />
-  </div>
 
-  <div>
-    <label for="name"> Name </label>
-    <input nbInput id="name" type="text" formControlName="name" />
-  </div>
+  
 
-  <div>
-    <label for="password"> password </label>
-    <input nbInput id="password" type="password" formControlName="password" />
-  </div>
 
-  <button mat-raised-button color="primary" class="button" type="submit">
-    Login
-  </button>
-</form>
+  <div class="main-div">
+
+    <mat-card>
+      <mat-card-header>
+        <div class="login-box-header">
+         <h2>Registration</h2>
+       </div>
+       <div class="err">
+     
+       </div>
+      </mat-card-header>
+      <mat-card-content>
+        <form  class="registrationForm"
+        [formGroup]="registrationForm"
+        (ngSubmit)="onSubmit(registrationForm.value)"
+      >
+          <table class="example-full-width" cellspacing="0">
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <input matInput id="email" type="text" formControlName="email" placeholder="email" required>
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <input matInput id="name" type="text" formControlName="name" placeholder="name" required>
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+            <td><mat-form-field class="example-full-width">
+              <input matInput id="password" type="password" formControlName="password" placeholder="password" size="400px" required>
+            </mat-form-field></td>
+          </tr></table>
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" class="button" type="submit" (click)="onSubmit(registrationForm.value)"  > 
+  registration
+</button>
+</mat-card-actions>
+    </mat-card>
+
+    </div>

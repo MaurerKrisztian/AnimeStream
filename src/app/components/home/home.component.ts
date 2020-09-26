@@ -38,12 +38,13 @@ export class HomeComponent implements OnInit {
         console.log(this.term);
       }
 
-      this.getAnimes(this.term, 1, this.pageSize);
+      this.getAnimes(this.term, 0, this.pageSize);
       console.log(this.term);
     });
   }
 
   getAnimes(term, pageIndex, pageSize) {
+    console.log("page",pageIndex)
     this.api.get('/api/anime?term=' + term + '&page='+(pageIndex+1)+'&limit='+ pageSize).subscribe((data: any) => {
       this.animes = data.data;
       this.length = data.meta.collectionSize

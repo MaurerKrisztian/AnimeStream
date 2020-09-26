@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class RegistrationComponent implements OnInit {
     password: new FormControl(''),
   });
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -28,6 +29,8 @@ export class RegistrationComponent implements OnInit {
   registration(email, name, password){
     this.api.post('/api/user', {email: email, name: name, password: password}).subscribe((response) => {
       console.log("registration: " , response)
+      this.router.navigate(['/login']);
+
     })
   }
 
