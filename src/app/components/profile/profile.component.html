@@ -4,6 +4,12 @@ name: {{user.name}} <br>
 email: {{user.email}} <br>
 roles: {{user.roles}} <br>
 
-<div class="notification" *ngFor="let notif of user.notification">
-    <span [innerHtml]="notif.message"></span> 
-</div>
+
+<h2>Notifications: </h2>
+
+<mat-card class="notifications">
+    <div class="notification" *ngFor="let notif of user.notification">
+        <hr>
+        <a [href]="notif.link">  <span [innerHtml]="notif.message"></span> </a>
+    </div>
+</mat-card>

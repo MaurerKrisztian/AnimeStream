@@ -15,7 +15,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 
 
 const routes: Routes = [
-  { path: 'card', component: AnimeCardComponent },
+  { path: 'test', component: AnimeCardComponent },
   { path: '', component: MainFrameComponent, 
     children: [
     { path: '', redirectTo: 'home', pathMatch: 'full' },

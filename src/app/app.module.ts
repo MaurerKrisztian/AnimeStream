@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NbThemeModule, NbLayoutModule, NbCardModule, NbInputModule,  NbButtonModule, NbTreeGridModule, NbSidebarService,NbRouteTabsetModule, NbSidebarModule, NbMenuItem, NbMenuModule, NbIconModule, NbActionsModule, NbAutocompleteModule, NbToastrModule, NbDialogModule  } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbCardModule, NbInputModule,  NbButtonModule, NbTreeGridModule, NbSidebarService,NbRouteTabsetModule, NbSidebarModule, NbMenuItem, NbMenuModule, NbIconModule, NbActionsModule, NbAutocompleteModule, NbToastrModule, NbDialogModule, NbPopoverModule, NbSelectModule  } from '@nebular/theme';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { AdminComponent } from './components/admin/admin.component';
@@ -57,6 +57,8 @@ import { ProfileComponent } from './components/profile/profile.component'
     
   ],
   imports: [
+    NbSelectModule,
+    NbPopoverModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
