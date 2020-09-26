@@ -47,9 +47,12 @@
               <a [href]="'anime/' + anime._id">
                 <div class="watch-btn">
                   <h3><i class="material-icons">&#xE037;</i> WATCH</h3>
+               
                 </div>
               </a>
             </div>
+            <button  *ngIf="authService.isAuth()"  class="subscribe"  (click)="subscribe(anime._id, anime.subscribers.includes(this.authService.getUserId()))">
+              {{ ( anime.subscribers.includes(this.authService.getUserId()))? "unfollow": "follow" }}</button>
           </div>
         </div>
       </div>

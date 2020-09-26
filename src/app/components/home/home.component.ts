@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { ActivatedRoute } from '@angular/router';
 import { PageEvent } from '@angular/material/paginator';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -9,13 +10,14 @@ import { PageEvent } from '@angular/material/paginator';
   styleUrls: ['./home.component.css', './home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  
   animes;
 
   length = 100;
   pageSize = 6;
   pageSizeOptions: number[] = [5, 10, 25, 100];
 
-  constructor(private api: ApiService, private route: ActivatedRoute) {}
+  constructor(private api: ApiService, private route: ActivatedRoute, public authService: AuthService) {}
 
   pageEvent: PageEvent;
 
@@ -43,7 +45,16 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  subscribe(id, isSubscribed){
+    this.api.patch('/api/anime/' + id + '/subscribe', {subscribe: !isSubscribed}).subscribe((res)=>{
+      console.log(res)
+      this.getAnimes(this.term, this.pageIndex, this.pageSize)
+    })
+  }
+
+  pageIndex=1;
   getAnimes(term, pageIndex, pageSize) {
+    this.pageIndex = pageIndex
     console.log("page",pageIndex)
     this.api.get('/api/anime?term=' + term + '&page='+(pageIndex+1)+'&limit='+ pageSize).subscribe((data: any) => {
       this.animes = data.data;
